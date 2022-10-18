@@ -1,0 +1,25 @@
+{
+  "name": "init",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "lint": "eslint src/",
+    "lint:fix": "eslint --fix src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/pixelplex_nodejs_course/init.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  },
+  "dependencies": {
+    "moment": "^2.29.4",
+    "readline-sync": "^1.4.10"
+  }
+}
