@@ -1,0 +1,26 @@
+{
+  "name": "2__asynchrony",
+  "version": "1.0.0",
+  "description": "Node.js asynchrony examples",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js .",
+    "lint:fix": "eslint --ext .js --fix .",
+    "clear": "rm -rf data/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
+  }
+}
