@@ -1,5 +1,5 @@
 {
-  "name": "architecture_example",
+  "name": "auth_example",
   "version": "1.0.0",
   "engines": {
     "node": ">=18"
