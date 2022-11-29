@@ -1,0 +1,107 @@
+
+<html>
+
+<head>
+
+    <title>Long Polling Example</title>
+
+</head>
+
+<body>
+
+    <div id="long-polling-app">
+
+        <div>
+
+            <h1>Long Polling Example</h1>
+
+        </div>
+
+        <div>
+
+            <table>
+
+                <tr>
+
+                    <th>Users</th>
+
+                </tr>
+
+               <tr v-for="response in responses">
+
+                    <td>
+
+                        {{response}}
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+
+    <script>
+    var app = new Vue({
+
+            el: '#long-polling-app',
+
+            data: {
+
+            responses: [],
+
+            requests: []
+
+        },
+
+        created: function () {
+
+            this.getData();
+
+        },
+
+        methods: {
+
+            getData: function () {
+
+                this.requests.push((new Date().getTime()));
+
+                return this.$http.get('http://localhost:8080/users')
+
+                .then(response => {
+
+                    if (response.body.visitors) {
+
+                        this.responses = response.body.visitors;
+
+                        return;
+
+                    }
+
+                    return;
+
+                })
+
+                .then(function () {
+
+                    return this.getData();
+
+                })
+
+            }
+
+        }
+
+    });
+    </script>
+
+</body>
+
+</html>
+

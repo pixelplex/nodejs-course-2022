@@ -15,7 +15,7 @@ class PostsRepository {
     if (!currentPost) {
       return null;
     }
-    await Post.update({ id }, { ...currentPost, ...props });
+    await Post.updateOne({ id }, { ...currentPost, ...props });
     return this.findById(id);
   }
 

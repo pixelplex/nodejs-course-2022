@@ -5,5 +5,5 @@ export interface IPost {
   imageUrl: string,
   createdAt?: Date,
   updatedAt?: Date,
-  creator: any,
+  creator: string,
 };

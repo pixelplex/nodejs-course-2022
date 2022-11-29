@@ -24,13 +24,13 @@ export class PostsService {
 
   static async searchBy(phrase: string): Promise<IPost[]> {
     // TODO: fix
-    const posts = await postsRepository.findAll();
-    const filteredPosts = posts.filter(
-      (p) => p.content.toLowerCase().includes(phrase) || p.title.toLowerCase().includes(phrase)
-    );
-    return filteredPosts;
-    // const posts = await postsRepository.search(phrase);
-    // return posts;
+    // const posts = await postsRepository.findAll();
+    // const filteredPosts = posts.filter(
+    //   (p) => p.content.toLowerCase().includes(phrase) || p.title.toLowerCase().includes(phrase)
+    // );
+    // return filteredPosts;
+    const posts = await postsRepository.search(phrase);
+    return posts;
   }
 
   static async update(postId: ObjectId, props: Partial<IPost>): Promise<IPost | null> {
